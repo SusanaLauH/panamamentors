@@ -1,4 +1,10 @@
 Panamamentors::Application.routes.draw do
+  resources :mentor_users
+
+
+  resources :student_users
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

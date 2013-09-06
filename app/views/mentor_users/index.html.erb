@@ -1,0 +1,35 @@
+<h1>Listing mentor_users</h1>
+
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Studies level</th>
+    <th>Field</th>
+    <th>Interests</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mentor_users.each do |mentor_user| %>
+  <tr>
+    <td><%= mentor_user.firstname %></td>
+    <td><%= mentor_user.lastname %></td>
+    <td><%= mentor_user.email %></td>
+    <td><%= mentor_user.password %></td>
+    <td><%= mentor_user.studies_level %></td>
+    <td><%= mentor_user.field %></td>
+    <td><%= mentor_user.interests %></td>
+    <td><%= link_to 'Show', mentor_user %></td>
+    <td><%= link_to 'Edit', edit_mentor_user_path(mentor_user) %></td>
+    <td><%= link_to 'Destroy', mentor_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mentor user', new_mentor_user_path %>
