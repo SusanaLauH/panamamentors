@@ -9,7 +9,32 @@
 </head>
 <body>
 
+<div id="wrapper">
+  <div id="header-wrapper">
+    <div id="header">
+      <div id="logo">
+        <h1><a href="#">PANAMA MENTORS</a></h1>
+        <p>Building your career path</p>
+      </div>
+    </div>
+  </div>
+  <!-- end #header -->
+  <div id="menu">
+    <ul>
+      <li><%= link_to "Home", home_path%></li>
+      <li><%= link_to "About", about_path%></li>
+      <li><%= link_to "Resources", resources_path%></li>
+      <li><%= link_to "Help", help_path%></li>
+      <li><%= link_to "Gallery", gallery_path%></li>
+      <li><%= link_to "Contact Us", contact_path%></li>
+    </ul>
+  </div>
+
 <%= yield %>
+
+<div id="footer">
+<p>Copyright (c) 2013 Panama Mentors. All rights reserved. | Photos by <a href="http://www.cbtrends.com/free-downloads.html/">CBTrends</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+</div>
 
 </body>
 </html>

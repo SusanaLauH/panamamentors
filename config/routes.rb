@@ -1,14 +1,28 @@
 Panamamentors::Application.routes.draw do
   resources :evaluations
-
-
-  get "static_pages/home"
- get "static_pages/help"
-  get "static_pages/about"
-
   resources :mentor_users
   resources :student_users
+
+  get "static_pages/home"
+  get "static_pages/help"
+  get "static_pages/about"
+  get "static_pages/contact"
+  get "static_pages/gallery"
+  get "static_pages/resources"
+  get "student_users/new"
+
+
   root to: 'static_pages#home'
+  match '/home'   => 'static_pages#home', :as => 'home'
+  match '/help' => 'static_pages#help', :as => 'help'
+  match '/about',   to: 'static_pages#about',   via: 'get'
+  match '/contact',   to: 'static_pages#contact',   via: 'get'
+  match '/gallery',   to: 'static_pages#gallery',   via: 'get'
+  match '/resources',   to: 'static_pages#resources',   via: 'get'
+  match '/signup',  to: 'student_users#new',            via: 'get'
+  match '/', to: 'static_pages#home', via: 'get'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
