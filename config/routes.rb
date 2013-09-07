@@ -1,7 +1,8 @@
 Panamamentors::Application.routes.draw do
+  get "static_pages/home"
+ get "static_pages/help"
+
   resources :mentor_users
-
-
   resources :student_users
 
 
