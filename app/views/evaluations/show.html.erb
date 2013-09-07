@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Evaluated:</b>
+  <%= @evaluation.evaluated %>
+</p>
+
+<p>
+  <b>Mentor:</b>
+  <%= @evaluation.mentor %>
+</p>
+
+<p>
+  <b>Evaluation:</b>
+  <%= @evaluation.evaluation %>
+</p>
+
+
+<%= link_to 'Edit', edit_evaluation_path(@evaluation) %> |
+<%= link_to 'Back', evaluations_path %>
