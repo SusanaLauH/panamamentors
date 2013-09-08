@@ -10,6 +10,7 @@ Panamamentors::Application.routes.draw do
   get "static_pages/gallery"
   get "static_pages/resources"
   get "student_users/new"
+  get "staic_pages/connect"
 
 
   root to: 'static_pages#home'
@@ -19,9 +20,9 @@ Panamamentors::Application.routes.draw do
   match '/contact',   to: 'static_pages#contact',   via: 'get'
   match '/gallery',   to: 'static_pages#gallery',   via: 'get'
   match '/resources',   to: 'static_pages#resources',   via: 'get'
+  match '/connect',   to: 'static_pages#connect',   via: 'get'
   match '/signup',  to: 'student_users#new',            via: 'get'
   match '/', to: 'static_pages#home', via: 'get'
-
 
 
   # The priority is based upon order of creation:

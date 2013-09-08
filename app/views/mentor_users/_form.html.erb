@@ -27,17 +27,17 @@
     <%= f.label :password %><br />
     <%= f.password_field :password %>
   </div>
-  <div class="field">
-    <%= f.label :studies_level %><br />
-    <%= f.text_field :studies_level %>
-  </div>
-  <div class="field">
-    <%= f.label :field %><br />
-    <%= f.text_field :field %>
-  </div>
-  <div class="field">
-    <%= f.label :interests %><br />
-    <%= f.text_field :interests %>
+    <div class="field">
+      <%= f.label :studies_level %><br />
+      <%= f.select :studies_level, options_for_select(["High School", "Undergraduate", "Masters", "PhD", "Other"],:disabled => ["Select One"]), :class => 'genForm_dropBox' %>
+    </div>
+    <div class="field">
+      <%= f.label :field %><br />
+      <%= f.select :field, options_for_select(["Computer Science", "Software Management", "Telecommunications", "Software Development", "Electrical Engineering"],:disabled => ["Select One"]), :class => 'genForm_dropBox' %>
+    </div>
+    <div class="field">
+      <%= f.label :interests %><br />
+      <%= f.text_field :interests %>
   </div>
   <div class="actions">
     <%= f.submit %>

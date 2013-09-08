@@ -2,7 +2,6 @@ class StudentUser < ActiveRecord::Base
 
   before_save { self.email = email.downcase }
 
-
   attr_accessible :email, :field, :firstname, :interests, :lastname, :mentor, :password, :studies_level
   belongs_to :MentorUser
 
@@ -15,5 +14,7 @@ class StudentUser < ActiveRecord::Base
   has_secure_password
   validates :password, length: { minimum: 6 }
   validates :studies_level, presence: true
+
+
 
 end

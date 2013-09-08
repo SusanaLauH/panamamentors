@@ -44,8 +44,12 @@ class StudentUsersController < ApplicationController
 
     respond_to do |format|
       if @student_user.save
+        #flash[:success] = "Welcome to Panama Mentors"
+        #redirect_to @student_user, :notice => "Account created"
         format.html { redirect_to @student_user, notice: 'Student user was successfully created.' }
         format.json { render json: @student_user, status: :created, location: @student_user }
+
+
       else
         format.html { render action: "new" }
         format.json { render json: @student_user.errors, status: :unprocessable_entity }

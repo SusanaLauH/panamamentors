@@ -1,7 +1,7 @@
 <%= form_for(@student_user) do |f| %>
   <% if @student_user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@student_user.errors.count, "error") %> prohibited this student_user from being saved:</h2>
+      <h2><%= pluralize(@student_user.errors.count, "error") %> have occurred. Please verify</h2>
 
       <ul>
       <% @student_user.errors.full_messages.each do |msg| %>
@@ -29,11 +29,11 @@
   </div>
   <div class="field">
     <%= f.label :studies_level %><br />
-    <%= f.text_field :studies_level %>
+    <%= f.select :studies_level, options_for_select(["High School", "Undergraduate", "Masters", "PhD", "Other"],:disabled => ["Select One"]), :class => 'genForm_dropBox' %>
   </div>
   <div class="field">
     <%= f.label :field %><br />
-    <%= f.text_field :field %>
+    <%= f.select :field, options_for_select(["Computer Science", "Software Management", "Telecommunications", "Software Development", "Electrical Engineering"],:disabled => ["Select One"]), :class => 'genForm_dropBox' %>
   </div>
   <div class="field">
     <%= f.label :interests %><br />

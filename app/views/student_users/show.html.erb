@@ -1,5 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @student_user %>
+        <%= @student_user.firstname %>
+      </h1>
+    </section>
+  </aside>
+</div>
+
+
 <p>
   <b>Firstname:</b>
   <%= @student_user.firstname %>
@@ -39,6 +51,7 @@
   <b>Mentor:</b>
   <%= @student_user.mentor %>
 </p>
+
 
 
 <%= link_to 'Edit', edit_student_user_path(@student_user) %> |
