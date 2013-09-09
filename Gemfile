@@ -50,5 +50,5 @@ gem 'sqlite3'
 end
 gem 'pg'
 
-gem 'devise'
+gem 'devise', '1.1.rc0'
 gem 'factory_girl_rails', '4.2.1'

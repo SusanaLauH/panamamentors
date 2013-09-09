@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130907214658) do
+ActiveRecord::Schema.define(:version => 20130908231001) do
 
   create_table "evaluations", :force => true do |t|
     t.date     "evaluated"
@@ -46,8 +46,10 @@ ActiveRecord::Schema.define(:version => 20130907214658) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
+    t.string   "remember_token"
   end
 
   add_index "student_users", ["email"], :name => "index_student_users_on_email", :unique => true
+  add_index "student_users", ["remember_token"], :name => "index_student_users_on_remember_token"
 
 end

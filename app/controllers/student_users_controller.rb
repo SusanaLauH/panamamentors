@@ -1,6 +1,23 @@
 class StudentUsersController < ApplicationController
+  #before_action :signed_in_user, only: [:edit, :update]
+  #before_action :correct_user,   only: [:edit, :update]
+
+
+
   # GET /student_users
   # GET /student_users.json
+
+  def signed_in_user
+    redirect_to signin_url, notice: "Please sign in." unless signed_in?
+  end
+
+  def correct_user
+    @student_users = StudentUser.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
+  end
+
+
+
   def index
     @student_users = StudentUser.all
 
@@ -39,6 +56,9 @@ class StudentUsersController < ApplicationController
 
   # POST /student_users
   # POST /student_users.json
+
+
+
   def create
     @student_user = StudentUser.new(params[:student_user])
 
@@ -84,4 +104,13 @@ class StudentUsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password,
+                                 :password_confirmation)
+  end
+
+
 end

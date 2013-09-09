@@ -6,6 +6,7 @@ class MentorUser < ActiveRecord::Base
   attr_accessible :email, :field, :firstname, :interests, :lastname, :password, :studies_level
 
      has_many :StudentUser
+     has_many :evaluations
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },

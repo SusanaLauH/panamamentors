@@ -1,4 +1,6 @@
 Panamamentors::Application.routes.draw do
+  devise_for :student_users
+
   resources :evaluations
   resources :mentor_users
   resources :student_users
@@ -13,7 +15,7 @@ Panamamentors::Application.routes.draw do
   get "static_pages/gallery"
   get "static_pages/resources"
   get "student_users/new"
-  get "staic_pages/connect"
+  get "static_pages/connect"
 
 
   root to: 'static_pages#home'
@@ -28,6 +30,9 @@ Panamamentors::Application.routes.draw do
   match '/', to: 'static_pages#home', via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
+  match '/evaluations', to: 'evaluations#new',  via: 'get'
+  match '/conferences', to: 'static_pages#conferences', via: 'get'
+  match '/articles', to: 'static_pages#articles', via: 'get'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

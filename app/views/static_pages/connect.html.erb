@@ -1,7 +1,53 @@
 <div id="page">
   <div id="page-bgtop">
     <div id="page-bgbtm">
-          <h2 class="title"><a href="#">Connecting to a Mentor</a>          </h2>
+          <h2 class="title">Connecting to a Mentor</a>          </h2>
+
+
+
+      <div id="page">
+        <div id="page-bgtop">
+          <div id="page-bgbtm">
+            <div id="user_nav">
+              <% if student_user_signed_in? %>
+                  Signed in as <%= current_user.email %>. Not you?
+                  <%= link_to "Sign out", signout_path, :method => :delete %>
+
+
+                    Write here the code to connect to a mentor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <% else %>
+                  <p>You need to have an account to use this resource.</>
+                  <p>
+                  <%= link_to "Create an Account", signup_path%> or <%= link_to "sign in", signin_path %>
+                  </p>
+              <% end %>
+            </div>
+            <div class="post"></div>
+          </div>
+        </div>
+
+
+
+
 
     </div>
     <div class="post"></div>
